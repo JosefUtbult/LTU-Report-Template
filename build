@@ -6,18 +6,20 @@ mkdir -p out/LTU-Report-Theme
 cd src
 pdflatex -output-directory=../out report.tex
 
-cd ..
-cp src/*.bib out/
+if [[ $1 == "--hard" ]]
+then
+	cd ..
+	cp src/*.bib out/
 
-cd out
-bibtex report
+	cd out
+	bibtex report
 
-for instance in bu*.aux; do # Whitespace-safe but not recursive.
-	bibtex ${instance%.*}
-done
+	for instance in bu*.aux; do # Whitespace-safe but not recursive.
+		bibtex ${instance%.*}
+	done
 
-cd ../src
+	cd ../src
 
-#pdflatex -output-directory=../out report.tex
-#pdflatex -output-directory=../out report.tex
-
+	pdflatex -output-directory=../out report.tex
+	pdflatex -output-directory=../out report.tex
+fi
