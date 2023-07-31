@@ -1,0 +1,6 @@
+{
+    "latex-workshop.latex.outDir": "%DIR%/../out",
+    "latex-workshop.latex.external.build.command": "./build",
+    "latex-workshop.view.pdf.color.dark.backgroundColor": "#0e0e0e",
+    "latex-workshop.view.pdf.color.dark.pageBorderColor": "#777777"
+}
