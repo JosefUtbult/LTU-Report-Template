@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo UID=$(id -u) GID=$(id -g) docker-compose run latex build $1

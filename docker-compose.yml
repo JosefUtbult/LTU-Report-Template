@@ -1,0 +1,12 @@
+version: '3'
+services:
+  latex:
+    container_name: latex
+    build:
+      context: .
+      dockerfile: Dockerfile
+    user: ${UID}:${GID}
+    working_dir: /home/user
+    volumes:
+      - ./src:/home/user/src:ro
+      - ./out:/home/user/out
